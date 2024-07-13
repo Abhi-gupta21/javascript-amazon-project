@@ -15,7 +15,6 @@ function updateCartQuantity(){
     cartQuantity+=cartItem.quantity;
   });
   console.log(cartQuantity);
-  console.log(cart);
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
