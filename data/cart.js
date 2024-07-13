@@ -23,3 +23,16 @@ export function addToCart(productId){
     }
     console.log(cart);
   }
+
+  export function removeFromCart(id){
+    const newCart=[];
+
+    cart.forEach((cartItem)=>{
+      if(cartItem.productId !== id){
+        newCart.push(cartItem);
+      }
+    });
+
+
+    cart = newCart;
+  }
