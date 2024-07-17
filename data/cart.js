@@ -3,7 +3,8 @@ export let cart = JSON.parse(localStorage.getItem('cart'));
 if(!cart){
   cart = [{
     productId: "3fdfe8d6-9a15-4979-b459-585b0d0545b9",
-    quantity: 2
+    quantity: 2,
+    deliveryOptionId: '2'
   }]
 }
 
@@ -26,7 +27,8 @@ export function addToCart(productId){
     }else{
       cart.push({
         productId: productId,  
-        quantity: 1
+        quantity: 1,
+        deliveryOptionId: '1'
       });
     }
     saveToStorage();
