@@ -6,7 +6,7 @@ import {deliveryOptions} from '../data/deliveryOptions.js'
 const today = dayjs();
 let deliveryDate = today.add(7, 'days');
 console.log(deliveryDate.format('dddd, MMMM D'));
-
+function renderOrderHistory(){
 let cartSummary='';
 
 cart.forEach((cartItem, index)=>{
@@ -118,6 +118,8 @@ document.querySelectorAll('.js-delivery-option').forEach((element)=>{
     element.addEventListener('click', () => {
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
+        renderOrderHistory();
     });
 });
-
+}
+renderOrderHistory();
