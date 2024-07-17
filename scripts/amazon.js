@@ -18,6 +18,8 @@ function updateCartQuantity(){
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
+updateCartQuantity();
+
 products.forEach((product) => {
     const html = `
         <div class="product-container">
