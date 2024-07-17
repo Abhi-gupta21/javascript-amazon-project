@@ -1,3 +1,5 @@
+import { renderOrderSummary } from "../scripts/checkout/orderSummary.js";
+import { renderPaymentSummary } from "../scripts/checkout/paymentSummary.js";
 export let cart = JSON.parse(localStorage.getItem('cart'));
 if (!cart) {
     cart = [{
@@ -42,8 +44,9 @@ export function removeFromCart(id) {
     });
 
     cart = newCart;
-
     saveToStorage();
+    renderOrderSummary();
+    renderPaymentSummary();
 }
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
